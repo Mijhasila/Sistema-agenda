@@ -11,8 +11,8 @@ D:\SistemaAgenda\CapaDatos\bin\Debug\CapaDatos.dll
 D:\SistemaAgenda\CapaDatos\bin\Debug\CapaDatos.pdb
 D:\SistemaAgenda\CapaDatos\bin\Debug\CapaEntidad.dll
 D:\SistemaAgenda\CapaDatos\bin\Debug\CapaEntidad.pdb
-D:\SistemaAgenda\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
 D:\SistemaAgenda\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
 D:\SistemaAgenda\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
 D:\SistemaAgenda\CapaDatos\obj\Debug\CapaDatos.dll
 D:\SistemaAgenda\CapaDatos\obj\Debug\CapaDatos.pdb
+D:\SistemaAgenda\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache

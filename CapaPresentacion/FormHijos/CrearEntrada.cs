@@ -15,7 +15,7 @@ namespace CapaPresentacion.FormHijos
 {
     public partial class CrearEntrada : Form
     {
-        public Entradas ObjEntradas { get; set; }
+        public Entradas ObjEntradas = new Entradas();
         readonly CD_Entrada entradas = new CD_Entrada();
         public CrearEntrada()
         {
@@ -80,7 +80,7 @@ namespace CapaPresentacion.FormHijos
                         Tipo = TxtTipo.Text,
                         Titulo = TxtTitulo.Text,
                         Fecha = Convert.ToDateTime(TxtFecha.Value.ToString("yyy/MM/d")),
-                        Hora = DateTime.Today.ToString(),
+                        Hora = DateTime.Now.ToString("hh:mm:ss"),
                         oUsuarios = new Usuarios { IdUsuario = Convert.ToInt32(TxtIdUsuario.Text) },
                     };
                 }
@@ -93,7 +93,7 @@ namespace CapaPresentacion.FormHijos
                         Tipo = TxtTipo.Text,
                         Titulo = TxtTitulo.Text,
                         Fecha = Convert.ToDateTime(TxtFecha.Value.ToString("yyy/MM/d")),
-                        Hora = DateTime.Today.ToString(),
+                        Hora = DateTime.Now.ToString("hh:mm:ss"),
                         oUsuarios = new Usuarios { IdUsuario = Convert.ToInt32(TxtIdUsuario.Text) },
                     };
                 }

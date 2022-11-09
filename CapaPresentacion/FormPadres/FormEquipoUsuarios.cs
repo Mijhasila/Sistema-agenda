@@ -57,7 +57,7 @@ namespace CapaPresentacion.FormPadres
 
                 if (result == DialogResult.OK)
                 {
-                    /*bool respuesta = new CN_EquipoUsuarios().RegistrarEquipoUsuario(Equipo.ObjEquipo, out string mensaje);
+                    bool respuesta = new CN_EquipoUsuarios().RegistrarEquipoUsuario(Equipo.ObjEquipo, out string mensaje);
                     if (respuesta)
                     {
                         Listar();
@@ -66,12 +66,69 @@ namespace CapaPresentacion.FormPadres
                     else
                     {
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }*/
+                    }
                 }
             }
         }
 
         private void GridViewEquipoUsuario_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;
+            }
+            if (e.ColumnIndex == 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.Editar2.Width;
+                var h = Properties.Resources.Editar2.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.Editar2, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+            if (e.ColumnIndex == 1)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                var w = Properties.Resources.Eliminar2.Width;
+                var h = Properties.Resources.Eliminar2.Height;
+                var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2;
+                var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2;
+
+                e.Graphics.DrawImage(Properties.Resources.Eliminar2, new Rectangle(x, y, w, h));
+                e.Handled = true;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GridViewEquipoUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void BtnExportar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormEquipoUsuarios_Load_1(object sender, EventArgs e)
+        {
+            Listar();
+        }
+
+        private void GridViewEquipoUsuario_CellPainting_1(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
             {

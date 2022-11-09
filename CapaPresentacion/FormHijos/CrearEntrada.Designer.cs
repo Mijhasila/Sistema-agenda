@@ -101,7 +101,6 @@
             // 
             this.TxtTitulo.BackColor = System.Drawing.Color.Gainsboro;
             this.TxtTitulo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtTitulo.Enabled = false;
             this.TxtTitulo.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtTitulo.Location = new System.Drawing.Point(26, 149);
             this.TxtTitulo.Name = "TxtTitulo";
@@ -236,10 +235,10 @@
             // 
             this.TxtUsuario.BackColor = System.Drawing.Color.Gainsboro;
             this.TxtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtUsuario.Enabled = false;
             this.TxtUsuario.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtUsuario.Location = new System.Drawing.Point(172, 54);
             this.TxtUsuario.Name = "TxtUsuario";
+            this.TxtUsuario.ReadOnly = true;
             this.TxtUsuario.Size = new System.Drawing.Size(345, 27);
             this.TxtUsuario.TabIndex = 398;
             // 
@@ -272,6 +271,7 @@
             this.TxtIdUsuario.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtIdUsuario.Location = new System.Drawing.Point(25, 54);
             this.TxtIdUsuario.Name = "TxtIdUsuario";
+            this.TxtIdUsuario.ReadOnly = true;
             this.TxtIdUsuario.Size = new System.Drawing.Size(89, 27);
             this.TxtIdUsuario.TabIndex = 394;
             // 
@@ -362,14 +362,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox TxtIdEntrada;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TxtTipo;
-        private System.Windows.Forms.TextBox TxtObservaciones;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.TextBox TxtTitulo;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
@@ -377,12 +372,16 @@
         internal System.Windows.Forms.DateTimePicker TxtFecha;
         private RJButton BtnGuardar;
         internal RJButton BtnLimpiarDatos;
-        private System.Windows.Forms.TextBox TxtUsuario;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
-        internal System.Windows.Forms.TextBox TxtIdUsuario;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label9;
         private RJButton BtnBuscarUsuario;
+        public System.Windows.Forms.TextBox TxtTipo;
+        public System.Windows.Forms.TextBox TxtObservaciones;
+        public System.Windows.Forms.TextBox TxtTitulo;
+        public System.Windows.Forms.TextBox TxtUsuario;
+        public System.Windows.Forms.TextBox TxtIdUsuario;
+        public System.Windows.Forms.TextBox TxtIdEntrada;
     }
 }

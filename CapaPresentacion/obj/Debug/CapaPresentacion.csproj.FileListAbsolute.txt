@@ -102,7 +102,6 @@ D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.FormPadres.FormAgen
 D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.FormPadres.FormCalendario.resources
 D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.FormPadres.FormCategoria.resources
 D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.FormPadres.FormDirectorio.resources
-D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.FormPadres.FormEntradas.resources
 D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.FormPadres.FormEquipos.resources
 D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.FormPadres.FormEquipoUsuarios.resources
 D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.FormPadres.FormNotas.resources
@@ -117,3 +116,4 @@ D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
 D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.ResolveComReference.cache
+D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.FormPadres.FormEntradas.resources

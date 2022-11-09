@@ -157,6 +157,12 @@ namespace CapaPresentacion
 
         private void entradasToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            AbrirFormulario(new FormEntradas());
+
+        }
+
+        private void equiposUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
         }
     }
 }
