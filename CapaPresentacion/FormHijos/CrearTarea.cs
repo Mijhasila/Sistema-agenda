@@ -69,6 +69,7 @@ namespace CapaPresentacion.FormHijos
                 {
                     ObjTarea = new Tareas
                     {
+                        IdTarea = Convert.ToInt32(TxtIdTarea.Text),
                         oUsuarios = new Usuarios { IdUsuario = Convert.ToInt32(TxtIdUsuario.Text) },
                         oEntradas = new Entradas { IdEntrada = Convert.ToInt32(TxtIdEntrada.Text) },
                         oCategoria = new Categoria { IdCategoria = Convert.ToInt32(TxtIdCategoria.Text) },

@@ -88,14 +88,16 @@ namespace CapaDatos
             try
             {
                 SqlCommand cmd = new SqlCommand("EditarListaTareas", Obj_conexion.AbrirConexion());
-                cmd.Parameters.AddWithValue("IdTarea", Tareas.IdTarea);
-                cmd.Parameters.AddWithValue("IdUsuarioCreador", Tareas.oUsuarios.IdUsuario);
+                cmd.Parameters.AddWithValue("Id", Tareas.IdTarea);
+                cmd.Parameters.AddWithValue("IDUSUARIO", Tareas.oUsuarios.IdUsuario);
                 cmd.Parameters.AddWithValue("Prioridad", Tareas.Prioridad);
                 cmd.Parameters.AddWithValue("IdCategoria", Tareas.oCategoria.IdCategoria);
-                cmd.Parameters.AddWithValue("FechaTerminacion", Tareas.FechaTerminacion);
+                cmd.Parameters.AddWithValue("FECHA_TERMINACION", Tareas.FechaTerminacion);
                 cmd.Parameters.AddWithValue("Descripcion", Tareas.Descripcion);
                 cmd.Parameters.AddWithValue("Estado", Tareas.Estado);
-                cmd.Parameters.AddWithValue("IndicadorCumplimiento", Tareas.IndicadorCumplimiento);
+                cmd.Parameters.AddWithValue("INDICADOR_CUMPLIMIENTO", Tareas.IndicadorCumplimiento);
+                cmd.Parameters.AddWithValue("identrada", Tareas.oEntradas.IdEntrada);
+
 
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();

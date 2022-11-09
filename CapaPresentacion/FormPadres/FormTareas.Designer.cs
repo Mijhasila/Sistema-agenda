@@ -74,7 +74,6 @@
             this.GridViewTareas.DefaultCellStyle = dataGridViewCellStyle2;
             this.GridViewTareas.EnableHeadersVisualStyles = false;
             this.GridViewTareas.Location = new System.Drawing.Point(2, 82);
-            this.GridViewTareas.MultiSelect = false;
             this.GridViewTareas.Name = "GridViewTareas";
             this.GridViewTareas.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -85,6 +84,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.GridViewTareas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.GridViewTareas.RowHeadersVisible = false;
             this.GridViewTareas.RowHeadersWidth = 51;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
@@ -160,6 +160,7 @@
             this.TxtExportar.TamañoBorde = 0;
             this.TxtExportar.Text = "Exportar";
             this.TxtExportar.UseVisualStyleBackColor = false;
+            this.TxtExportar.Click += new System.EventHandler(this.TxtExportar_Click);
             // 
             // BtnCrearNuevo
             // 

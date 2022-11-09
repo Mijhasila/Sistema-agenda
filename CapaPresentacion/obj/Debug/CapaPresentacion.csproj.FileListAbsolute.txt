@@ -116,3 +116,4 @@ D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileI
 D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
 D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+D:\SistemaAgenda\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.ResolveComReference.cache

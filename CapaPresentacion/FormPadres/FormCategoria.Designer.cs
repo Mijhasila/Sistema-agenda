@@ -74,7 +74,6 @@
             this.GridViewCategoria.DefaultCellStyle = dataGridViewCellStyle2;
             this.GridViewCategoria.EnableHeadersVisualStyles = false;
             this.GridViewCategoria.Location = new System.Drawing.Point(1, 74);
-            this.GridViewCategoria.MultiSelect = false;
             this.GridViewCategoria.Name = "GridViewCategoria";
             this.GridViewCategoria.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -85,6 +84,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.GridViewCategoria.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.GridViewCategoria.RowHeadersVisible = false;
             this.GridViewCategoria.RowHeadersWidth = 51;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;

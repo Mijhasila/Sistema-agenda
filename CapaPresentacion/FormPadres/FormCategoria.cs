@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CapaPresentacion.FormPadres
 {
@@ -167,6 +168,29 @@ namespace CapaPresentacion.FormPadres
         }
         private void TxtExportar_Click(object sender, EventArgs e)
         {
+            var inicio = 2;
+            GridViewCategoria.SelectAll();
+            DataObject copydata = GridViewCategoria.GetClipboardContent();
+            if (copydata != null) Clipboard.SetDataObject(copydata);
+            Microsoft.Office.Interop.Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlwbook;
+            Microsoft.Office.Interop.Excel.Worksheet xlsheet;
+            object miseddata = System.Reflection.Missing.Value;
+            xlwbook = xlapp.Workbooks.Add(miseddata);
+
+            xlsheet = (Microsoft.Office.Interop.Excel.Worksheet)xlwbook.Worksheets.get_Item(1);
+            Microsoft.Office.Interop.Excel.Range xlr = (Microsoft.Office.Interop.Excel.Range)xlsheet.Cells[inicio, 1];
+            xlr.Select();
+
+            xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+
+            xlsheet.Cells[inicio - 1, 1] = "ID";
+            xlsheet.Cells[inicio - 1, 2] = "nombre";
+            xlsheet.Cells[inicio - 1, 3] = "idUsuario";
+
+
+            xlapp.Visible = true;
+
             /*if (GridViewCategoria.Rows.Count < 1)
             {
                 MessageBox.Show("No hay datos para exportar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

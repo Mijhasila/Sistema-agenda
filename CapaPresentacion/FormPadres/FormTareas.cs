@@ -152,7 +152,7 @@ namespace CapaPresentacion.FormPadres
             }
             if (GridViewTareas.Columns[e.ColumnIndex].Name == "Eliminar")
             {
-                if (e.ColumnIndex == 10)
+                if (e.ColumnIndex == 1)
                 {
                     if (MessageBox.Show("¿Desea eliminar la Tarea?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
@@ -173,6 +173,38 @@ namespace CapaPresentacion.FormPadres
                     }
                 }
             }
+        }
+
+        private void TxtExportar_Click(object sender, EventArgs e)
+        {
+            var inicio = 2;
+            GridViewTareas.SelectAll();
+            DataObject copydata = GridViewTareas.GetClipboardContent();
+            if (copydata != null) Clipboard.SetDataObject(copydata);
+            Microsoft.Office.Interop.Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlwbook;
+            Microsoft.Office.Interop.Excel.Worksheet xlsheet;
+            object miseddata = System.Reflection.Missing.Value;
+            xlwbook = xlapp.Workbooks.Add(miseddata);
+
+            xlsheet = (Microsoft.Office.Interop.Excel.Worksheet)xlwbook.Worksheets.get_Item(1);
+            Microsoft.Office.Interop.Excel.Range xlr = (Microsoft.Office.Interop.Excel.Range)xlsheet.Cells[inicio, 1];
+            xlr.Select();
+
+            xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+
+            xlsheet.Cells[inicio - 1, 1] = "ID";
+            xlsheet.Cells[inicio - 1, 2] = "Id_Usuario";
+            xlsheet.Cells[inicio - 1, 3] = "Prioridad";
+            xlsheet.Cells[inicio - 1, 4] = "id_Categoria";
+            xlsheet.Cells[inicio - 1, 5] = "Fecha_Terminacion";
+            xlsheet.Cells[inicio - 1, 6] = "Descripcion";
+            xlsheet.Cells[inicio - 1, 7] = "Estado";
+            xlsheet.Cells[inicio - 1, 8] = "Indicador_Cumplimiento";
+            xlsheet.Cells[inicio - 1, 9] = "Id_Entrada";
+
+
+            xlapp.Visible = true;
         }
     }
 }
