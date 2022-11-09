@@ -50,7 +50,7 @@ namespace CapaDatos
                 Obj_conexion.CerrarConexion();
             }
         }
-        public Equipos Consultar(int idEquipo)
+        public Equipos Consultar(string idEquipo)
         {
             try
             {

@@ -93,6 +93,7 @@ namespace CapaPresentacion.FormPadres
             this.GridViewEquipoUsuario.RowTemplate.Height = 35;
             this.GridViewEquipoUsuario.Size = new System.Drawing.Size(1149, 589);
             this.GridViewEquipoUsuario.TabIndex = 210;
+            this.GridViewEquipoUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridViewEquipoUsuario_CellContentClick_1);
             this.GridViewEquipoUsuario.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.GridViewEquipoUsuario_CellPainting_1);
             // 
             // Editar
@@ -137,6 +138,7 @@ namespace CapaPresentacion.FormPadres
             this.BtnExportar.TamañoBorde = 0;
             this.BtnExportar.Text = "Exportar";
             this.BtnExportar.UseVisualStyleBackColor = false;
+            this.BtnExportar.Click += new System.EventHandler(this.BtnExportar_Click_1);
             // 
             // BtnImprimir
             // 
@@ -180,6 +182,7 @@ namespace CapaPresentacion.FormPadres
             this.BtnCrearNuevo.TamañoBorde = 0;
             this.BtnCrearNuevo.Text = "Crear Nuevo";
             this.BtnCrearNuevo.UseVisualStyleBackColor = false;
+            this.BtnCrearNuevo.Click += new System.EventHandler(this.BtnCrearNuevo_Click_1);
             // 
             // FormEquipoUsuarios
             // 

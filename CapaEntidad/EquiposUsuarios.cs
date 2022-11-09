@@ -13,7 +13,7 @@ namespace CapaEntidad
     public class EquiposUsuarios
     {
         public int IdEquipoUsuario { get; set; }
-        public bool Tipo { get; set; }
+        public int Tipo { get; set; }
         public Usuarios oUsuarios { get; set; }
         public int IdUsuario { get; set; }
         public Equipos oEquipos{ get; set; }

@@ -57,7 +57,7 @@ namespace CapaPresentacion.FormPadres
 
                 if (result == DialogResult.OK)
                 {
-                    bool respuesta = new CN_EquipoUsuarios().RegistrarEquipoUsuario(Equipo.ObjEquipo, out string mensaje);
+                    bool respuesta = new CD_EquipoUsuarios().RegistrarEquipoUsuarios(Equipo.ObjEU, out string mensaje);
                     if (respuesta)
                     {
                         Listar();
@@ -158,6 +158,113 @@ namespace CapaPresentacion.FormPadres
                 e.Graphics.DrawImage(Properties.Resources.Eliminar2, new Rectangle(x, y, w, h));
                 e.Handled = true;
             }
+        }
+
+        private void BtnCrearNuevo_Click_1(object sender, EventArgs e)
+        {
+            using (var EU = new CrearEquipoUsuario())
+            {
+                var result = EU.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    bool respuesta = ObjEquiposUsuarios.RegistrarEquipoUsuarios(EU.ObjEU, out string mensaje);
+                    if (respuesta)
+                    {
+                        Listar();
+                        MessageBox.Show("Equipo Usuario Agregado Correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se agrego el registro", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+        }
+
+        private void GridViewEquipoUsuario_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            string mensaje;
+
+            if (GridViewEquipoUsuario.Columns[e.ColumnIndex].Name == "Editar")
+            {
+
+                if (e.ColumnIndex >= 0)
+                {
+                    using (var EU = new CrearEquipoUsuario())
+                    {
+                        EU.TxtIdEquipoUsuario.Text = GridViewEquipoUsuario.Rows[e.RowIndex].Cells[2].Value.ToString();
+                        EU.TxtTipo.Text = GridViewEquipoUsuario.Rows[e.RowIndex].Cells[3].Value.ToString();
+                        EU.TxtIdUsuario.Text = GridViewEquipoUsuario.Rows[e.RowIndex].Cells[4].Value.ToString();
+                        EU.TxtIdUsuarioPerteneciente.Text = GridViewEquipoUsuario.Rows[e.RowIndex].Cells[5].Value.ToString();
+                        EU.TxtIdEquipo.Text = GridViewEquipoUsuario.Rows[e.RowIndex].Cells[6].Value.ToString();
+                        var result = EU.ShowDialog();
+
+                        if (result == DialogResult.OK)
+                        {
+                            bool Resultado = new CD_EquipoUsuarios().EditarEquiposUsuarios(EU.ObjEU, out mensaje);
+                            if (Resultado)
+                            {
+                                Listar();
+                                MessageBox.Show("Registro Actualizado Correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+                }
+            }
+            if (GridViewEquipoUsuario.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                if (e.ColumnIndex == 1)
+                {
+                    if (MessageBox.Show("¿Desea eliminar el registro?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        EquiposUsuarios EU = new EquiposUsuarios()
+                        {
+                            IdEquipoUsuario = (int)GridViewEquipoUsuario.Rows[e.RowIndex].Cells[2].Value,
+                        };
+                        bool Respuesta = new CD_EquipoUsuarios().EliminarEquiposUsuarios(EU, out mensaje);
+                        if (Respuesta)
+                        {
+                            Listar();
+                            MessageBox.Show("Registro Eliminado Correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void BtnExportar_Click_1(object sender, EventArgs e)
+        {
+            var inicio = 2;
+            GridViewEquipoUsuario.SelectAll();
+            DataObject copydata = GridViewEquipoUsuario.GetClipboardContent();
+            if (copydata != null) Clipboard.SetDataObject(copydata);
+            Microsoft.Office.Interop.Excel.Application xlapp = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel.Workbook xlwbook;
+            Microsoft.Office.Interop.Excel.Worksheet xlsheet;
+            object miseddata = System.Reflection.Missing.Value;
+            xlwbook = xlapp.Workbooks.Add(miseddata);
+
+            xlsheet = (Microsoft.Office.Interop.Excel.Worksheet)xlwbook.Worksheets.get_Item(1);
+            Microsoft.Office.Interop.Excel.Range xlr = (Microsoft.Office.Interop.Excel.Range)xlsheet.Cells[inicio, 1];
+            xlr.Select();
+
+            xlsheet.PasteSpecial(xlr, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
+
+            xlsheet.Cells[inicio - 1, 1] = "ID";
+            xlsheet.Cells[inicio - 1, 2] = "Tipo";
+            xlsheet.Cells[inicio - 1, 3] = "IdUsuario";
+            xlsheet.Cells[inicio - 1, 4] = "Id_Usuario";
+            xlsheet.Cells[inicio - 1, 5] = "id_equipo";
+            xlapp.Visible = true;
         }
     }
 }

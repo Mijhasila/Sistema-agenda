@@ -55,6 +55,7 @@
             this.TxtTipo = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.TxtIdEquipoUsuario = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
@@ -100,7 +101,7 @@
             this.BtnLimpiarDatos.ForeColor = System.Drawing.Color.White;
             this.BtnLimpiarDatos.Image = ((System.Drawing.Image)(resources.GetObject("BtnLimpiarDatos.Image")));
             this.BtnLimpiarDatos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnLimpiarDatos.Location = new System.Drawing.Point(640, 318);
+            this.BtnLimpiarDatos.Location = new System.Drawing.Point(651, 318);
             this.BtnLimpiarDatos.Name = "BtnLimpiarDatos";
             this.BtnLimpiarDatos.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
             this.BtnLimpiarDatos.RadioBorde = 15;
@@ -221,7 +222,7 @@
             this.TxtBuscarUsuarioPerteneciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtBuscarUsuarioPerteneciente.ForeColor = System.Drawing.Color.White;
             this.TxtBuscarUsuarioPerteneciente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.TxtBuscarUsuarioPerteneciente.Location = new System.Drawing.Point(639, 130);
+            this.TxtBuscarUsuarioPerteneciente.Location = new System.Drawing.Point(650, 130);
             this.TxtBuscarUsuarioPerteneciente.Name = "TxtBuscarUsuarioPerteneciente";
             this.TxtBuscarUsuarioPerteneciente.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.TxtBuscarUsuarioPerteneciente.RadioBorde = 15;
@@ -309,7 +310,7 @@
             this.BtnBuscarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscarUsuario.ForeColor = System.Drawing.Color.White;
             this.BtnBuscarUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnBuscarUsuario.Location = new System.Drawing.Point(639, 44);
+            this.BtnBuscarUsuario.Location = new System.Drawing.Point(650, 44);
             this.BtnBuscarUsuario.Name = "BtnBuscarUsuario";
             this.BtnBuscarUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.BtnBuscarUsuario.RadioBorde = 15;
@@ -332,7 +333,7 @@
             this.BtnBuscarEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnBuscarEquipo.ForeColor = System.Drawing.Color.White;
             this.BtnBuscarEquipo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnBuscarEquipo.Location = new System.Drawing.Point(639, 222);
+            this.BtnBuscarEquipo.Location = new System.Drawing.Point(650, 222);
             this.BtnBuscarEquipo.Name = "BtnBuscarEquipo";
             this.BtnBuscarEquipo.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.BtnBuscarEquipo.RadioBorde = 15;
@@ -408,12 +409,21 @@
             this.label2.TabIndex = 423;
             this.label2.Text = "Tipo";
             // 
+            // TxtIdEquipoUsuario
+            // 
+            this.TxtIdEquipoUsuario.Location = new System.Drawing.Point(769, 12);
+            this.TxtIdEquipoUsuario.Name = "TxtIdEquipoUsuario";
+            this.TxtIdEquipoUsuario.Size = new System.Drawing.Size(26, 22);
+            this.TxtIdEquipoUsuario.TabIndex = 426;
+            this.TxtIdEquipoUsuario.Visible = false;
+            // 
             // CrearEquipoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 362);
+            this.ClientSize = new System.Drawing.Size(811, 362);
+            this.Controls.Add(this.TxtIdEquipoUsuario);
             this.Controls.Add(this.TxtTipo);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label2);
@@ -466,23 +476,24 @@
         private System.Windows.Forms.TextBox TxtUsuarioPertenciente;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox10;
-        internal System.Windows.Forms.TextBox TxtIdUsuarioPerteneciente;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Label label6;
         private RJButton TxtBuscarUsuarioPerteneciente;
         private System.Windows.Forms.TextBox TxtUsuarioCreador;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox12;
-        internal System.Windows.Forms.TextBox TxtIdUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label9;
         private RJButton BtnBuscarUsuario;
         private RJButton BtnBuscarEquipo;
-        private System.Windows.Forms.TextBox TxtIdEquipo;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox TxtTipo;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.TextBox TxtIdEquipoUsuario;
+        public System.Windows.Forms.TextBox TxtIdUsuarioPerteneciente;
+        public System.Windows.Forms.TextBox TxtIdUsuario;
+        public System.Windows.Forms.TextBox TxtIdEquipo;
+        public System.Windows.Forms.TextBox TxtTipo;
     }
 }
