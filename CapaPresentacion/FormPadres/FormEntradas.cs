@@ -18,10 +18,9 @@ namespace CapaPresentacion.FormPadres
         readonly CapaDatos.CD_Calendario ObjCalendario = new CapaDatos.CD_Calendario();
         private static Usuarios UsuarioActual;
 
-        public FormEntradas(Usuarios usuarios)
+        public FormEntradas()
         {
             InitializeComponent();
-            UsuarioActual = usuarios;
         }
         public void Listar()
         {
@@ -64,6 +63,11 @@ namespace CapaPresentacion.FormPadres
         }
 
         private void GridViewEntradas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void TxtExportar_Click(object sender, EventArgs e)
         {
 
         }

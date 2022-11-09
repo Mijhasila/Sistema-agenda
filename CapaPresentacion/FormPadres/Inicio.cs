@@ -150,6 +150,13 @@ namespace CapaPresentacion
             BtnEquipos.ForeColor = Color.White;
         }
 
-        
+        private void BtnCrearEntrada_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void entradasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

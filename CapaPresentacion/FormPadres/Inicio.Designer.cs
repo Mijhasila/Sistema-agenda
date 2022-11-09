@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.BtnGestionAgenda = new System.Windows.Forms.ToolStripMenuItem();
+            this.BtnAgendaPersonal = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnCalendario = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnDirectorio = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnTareas = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,7 @@
             this.BtnCrearEntrada = new System.Windows.Forms.ToolStripMenuItem();
             this.UserName = new System.Windows.Forms.Label();
             this.Contenedor = new System.Windows.Forms.Panel();
-            this.BtnAgendaPersonal = new System.Windows.Forms.ToolStripMenuItem();
+            this.entradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -87,6 +88,18 @@
             this.BtnGestionAgenda.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.BtnGestionAgenda.MouseLeave += new System.EventHandler(this.BtnAgenda_MouseLeave);
             this.BtnGestionAgenda.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BtnAgenda_MouseMove);
+            // 
+            // BtnAgendaPersonal
+            // 
+            this.BtnAgendaPersonal.AutoSize = false;
+            this.BtnAgendaPersonal.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BtnAgendaPersonal.ForeColor = System.Drawing.Color.White;
+            this.BtnAgendaPersonal.Name = "BtnAgendaPersonal";
+            this.BtnAgendaPersonal.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.BtnAgendaPersonal.Size = new System.Drawing.Size(230, 50);
+            this.BtnAgendaPersonal.Text = "Agenda Personal";
+            this.BtnAgendaPersonal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtnAgendaPersonal.Click += new System.EventHandler(this.BtnAgendaPersonal_Click);
             // 
             // BtnCalendario
             // 
@@ -230,11 +243,14 @@
             // 
             // BtnCrearEntrada
             // 
+            this.BtnCrearEntrada.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.entradasToolStripMenuItem});
             this.BtnCrearEntrada.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCrearEntrada.ForeColor = System.Drawing.Color.White;
             this.BtnCrearEntrada.Name = "BtnCrearEntrada";
-            this.BtnCrearEntrada.Size = new System.Drawing.Size(154, 56);
-            this.BtnCrearEntrada.Text = "Crear Entrada";
+            this.BtnCrearEntrada.Size = new System.Drawing.Size(111, 56);
+            this.BtnCrearEntrada.Text = "Entradas";
+            this.BtnCrearEntrada.Click += new System.EventHandler(this.BtnCrearEntrada_Click);
             // 
             // UserName
             // 
@@ -256,17 +272,12 @@
             this.Contenedor.Size = new System.Drawing.Size(1132, 593);
             this.Contenedor.TabIndex = 3;
             // 
-            // BtnAgendaPersonal
+            // entradasToolStripMenuItem
             // 
-            this.BtnAgendaPersonal.AutoSize = false;
-            this.BtnAgendaPersonal.BackColor = System.Drawing.Color.MidnightBlue;
-            this.BtnAgendaPersonal.ForeColor = System.Drawing.Color.White;
-            this.BtnAgendaPersonal.Name = "BtnAgendaPersonal";
-            this.BtnAgendaPersonal.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.BtnAgendaPersonal.Size = new System.Drawing.Size(230, 50);
-            this.BtnAgendaPersonal.Text = "Agenda Personal";
-            this.BtnAgendaPersonal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtnAgendaPersonal.Click += new System.EventHandler(this.BtnAgendaPersonal_Click);
+            this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
+            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(224, 32);
+            this.entradasToolStripMenuItem.Text = "Entradas";
+            this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
             // 
             // Inicio
             // 
@@ -304,6 +315,7 @@
         private System.Windows.Forms.ToolStripMenuItem BtnEquipo;
         private System.Windows.Forms.ToolStripMenuItem BtnEquipoUsuarios;
         private System.Windows.Forms.ToolStripMenuItem BtnAgendaPersonal;
+        private System.Windows.Forms.ToolStripMenuItem entradasToolStripMenuItem;
     }
 }
 
